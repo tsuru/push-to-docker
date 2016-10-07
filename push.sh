@@ -1,10 +1,10 @@
 #!/bin/bash
 
 function tag_and_push {
-	if [ -n "$1" ]; then
-		echo "Pushing docker image to hub tagged as $1"
-		docker build -t $IMAGE_NAME:$1 .
-		docker push $IMAGE_NAME:$1
+	if [ -n "$1" ] && [ -n "$IMAGE_NAME" ]; then
+		echo "Pushing docker image to hub tagged as $IMAGE_NAME:$1"
+		#docker build -t $IMAGE_NAME:$1 .
+		#docker push $IMAGE_NAME:$1
 	fi
 }
 
