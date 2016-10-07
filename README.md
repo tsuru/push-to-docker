@@ -6,7 +6,9 @@ The script will push the image if the env TRAVIS_GO_VERSION matches the GO_FOR_R
 # Behavior
 
 If on master => pushes to latest.
+
 If it's a tag in the format v1.2.3 => pushes to v1.2.3 and v1
+
 If it's a tag in the format v1.2.3-rc => pushes to v1.2.3-rc
 
 # Configuration
