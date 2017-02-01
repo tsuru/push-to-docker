@@ -8,8 +8,8 @@ function build_and_tag {
 	fi
 	echo "Building platform and tagged as tsuru/${PLATFORM}:${DOCKER_TAG}"
 	pushd ${PLATFORM}
-	echo docker build -t tsuru/${PLATFORM}:${DOCKER_TAG} .
-	echo docker push tsuru/${PLATFORM}:${DOCKER_TAG}
+	docker build -t tsuru/${PLATFORM}:${DOCKER_TAG} .
+	docker push tsuru/${PLATFORM}:${DOCKER_TAG}
 	popd
 }
 
