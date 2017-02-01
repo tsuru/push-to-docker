@@ -19,6 +19,8 @@ if [ -n "$TRAVIS_TAG" ] && [[ "${TRAVIS_TAG}" =~ ([0-9]+). ]]; then
 	fi
 fi
 
+TRAVIS_GO_VERSION=$(echo $TRAVIS_GO_VERSION | sed -r 's/([0-9]+\.[0-9]+).*$/\1/')
+GO_FOR_RELEASE=$(echo $GO_FOR_RELEASE | sed -r 's/([0-9]+\.[0-9]+).*$/\1/')
 if [ "${TRAVIS_GO_VERSION}" = "${GO_FOR_RELEASE}" ]; then
 	cat > ~/.dockercfg <<EOF
 {
