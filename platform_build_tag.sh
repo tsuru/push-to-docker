@@ -16,8 +16,7 @@ function build_and_tag {
 cat > ~/.dockercfg <<EOF
 {
   "https://index.docker.io/v1/": {
-    "auth": "${HUB_AUTH}",
-    "email": "${HUB_EMAIL}"
+    "auth": "${HUB_AUTH}"
   }
 }
 EOF
