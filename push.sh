@@ -8,6 +8,11 @@ function tag_and_push {
 	fi
 }
 
+if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
+	echo "No image push for pull requests"
+	exit 0
+fi
+
 LATEST_TAG="latest"
 MAJOR_TAG=""
 VERSION_TAG=""
