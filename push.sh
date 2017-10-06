@@ -38,6 +38,8 @@ EOF
 	if [ -n "$TRAVIS_TAG" ]; then
 		tag_and_push $MAJOR_TAG
 		tag_and_push $VERSION_TAG
+	elif [[ "${TRAVIS_BRANCH}" =~ release-.+ ]]; then
+		tag_and_push $TRAVIS_BRANCH
 	elif [ "${TRAVIS_BRANCH}" = "master" ]; then
 		tag_and_push $LATEST_TAG
 	fi
