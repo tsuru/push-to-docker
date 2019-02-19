@@ -1,7 +1,10 @@
 #!/bin/bash
 
 # Only build platforms and push to dockerhub when commiting to master branch
-if [[ "${BRANCH}" != "master" || "${TRAVIS_PULL_REQUEST}" != "false" ]]; then
+echo "TRAVIS_BRANCH=$TRAVIS_BRANCH"
+echo "TRAVIS_PULL_REQUEST=$TRAVIS_PULL_REQUEST"
+echo "PR=$PR"
+if [[ "${TRAVIS_BRANCH}" != "master" || "${TRAVIS_PULL_REQUEST}" != "false" ]]; then
 	echo "This branch isn't master so we wont build/push images to dockerhub"
 	exit 0;
 fi
