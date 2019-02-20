@@ -5,7 +5,7 @@ echo "TRAVIS_BRANCH=$TRAVIS_BRANCH"
 echo "TRAVIS_PULL_REQUEST=$TRAVIS_PULL_REQUEST"
 echo "PR=$PR"
 echo "TRAVIS_TAG=$TRAVIS_TAG"
-if [[ "${TRAVIS_BRANCH}" != "master" && ! ${PLATFORMS[*]} =~ "$TRAVIS_TAG" || "${TRAVIS_PULL_REQUEST}" != "false" ]]; then
+if [[ "${TRAVIS_BRANCH}" != "master" && -z "$TRAVIS_TAG" || "${TRAVIS_PULL_REQUEST}" != "false" ]]; then
 	echo "This branch isn't master and it theres no tag like <platform>-([0-9.]+) so we wont build/push images to dockerhub"
 	exit 0;
 fi
